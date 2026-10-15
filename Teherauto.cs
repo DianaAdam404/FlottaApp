@@ -13,8 +13,9 @@ namespace FlottaApp
         }
         public override int Adokalkulacio(double Ado)
         {
-            return base.Adokalkulacio(Ado)+ Teherbiras * 10000; 
-        }
+            double value = base.Adokalkulacio(Ado) + Teherbiras * 10000;
+            return Convert.ToInt32(value);
+            }
         public override string ToString()
         {
             return $"{base.ToString()} | Teherbírás: [{Teherbiras}] t";

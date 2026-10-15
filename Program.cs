@@ -14,6 +14,14 @@ foreach (string sor in File.ReadLines("eredmenyek.csv"))
     string Tipus = adatok[0].Trim();
     int Alapar = Alapar;
     string Rendszam = adatok[1];
+    if (Tipus == "J")
+    {
+        List<Jarmu> jarmuvek = new List<Jarmu>();
+    }
+    if (Tipus == "T")
+    {
+        List<Teherauto> teherautok = new List<Teherauto>();
+    }
     if (!int.TryParse(adatok[2], out int pontszam))
     {
         hibasSorokSzama++;
@@ -26,3 +34,7 @@ foreach (string sor in File.ReadLines("eredmenyek.csv"))
     }
     kocsi.Add(new Jarmu(Rendszam, Alapar));
 }
+Console.WriteLine($"Sikeresen beolvasott jarmuvek szama: {kocsi.Count}");
+Console.WriteLine($"Hibas sorok szama:{hibasSorokSzama}");
+foreach (Jarmu kiir in kocsi)
+{ Console.WriteLine(kiir); }
