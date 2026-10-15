@@ -32,13 +32,13 @@ namespace FlottaApp
             Rendszam = Rendszam;
             Alapar = alapar;
         }
-        public virtual int Adokalkulacio(int Ado) 
+        public virtual double Adokalkulacio(double Ado) 
         {
-            return alapar* 0.5;
+            return Ado= Convert.ToInt32(alapar * 0.5);
         }
         public override string ToString()
         {
-            return $"Jármű {Rendszam} | Alapár: {Alapar} Ft | Adó: {Adokalkulacio()} Ft";
+            return $"Jármű [{Rendszam}] | Alapár: [{Alapar}] Ft | Adó: [{Adokalkulacio(Ado)}] Ft";
         }
 
     }
